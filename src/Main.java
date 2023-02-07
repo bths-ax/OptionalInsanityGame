@@ -42,6 +42,7 @@ public class Main {
 			}
 
 			if (game.checkWin()) {
+				System.out.println(game);
 				System.out.println("You win");
 				System.out.println("Your IQ is " + iqCounter);
 				break;
