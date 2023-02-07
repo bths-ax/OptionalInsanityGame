@@ -1,14 +1,14 @@
 // this stuff is always size 10 anyways i can hard code some stuff
 
 public class Game {
-	private static const int EMPTY_SPACE = 0;
-	private static const int RED_PEG     = 1;
-	private static const int BLUE_PEG    = 2;
+	private static int EMPTY_SPACE = 0;
+	private static int RED_PEG     = 1;
+	private static int BLUE_PEG    = 2;
 
 	private int[] board;
 
 	public Game() {
-		this.board = new int[10] {
+		this.board = new int[] {
 			RED_PEG,
 			RED_PEG,
 			RED_PEG,

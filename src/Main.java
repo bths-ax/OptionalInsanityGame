@@ -15,15 +15,36 @@ public class Main {
 		System.out.println("Have fun");
 		System.out.println();
 
+		int iqCounter = 100;
+
 		while (true) {
 			Game game = new Game();
 
 			while (!game.checkWin()) {
-				while (true) {
-					System.out.print("Peg to move: ");
-					int pegIndex = scanner.nextInt();
+				System.out.println(game);
+				System.out.print("Choose a peg to move, or -1 to reset: ");
+				int pegIndex = scanner.nextInt();
 
+				if (pegIndex == -1) {
+					iqCounter -= 10;
+					System.out.println("Game reset");
+					System.out.println("Your IQ: " + iqCounter);
+					System.out.println();
+					break;
 				}
+
+				while (!game.move(pegIndex)) {
+					System.out.print("Unable to move peg " + pegIndex + ", try again: ");
+					pegIndex = scanner.nextInt();
+				}
+
+				System.out.println();
+			}
+
+			if (game.checkWin()) {
+				System.out.println("You win");
+				System.out.println("Your IQ is " + iqCounter);
+				break;
 			}
 		}
 	}
